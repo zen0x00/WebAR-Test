@@ -132,26 +132,26 @@
             <div class="spinner"></div>
         </div>
     </div>
-    <script type="text/javascript" src="https://libs.zappar.com/zappar-cv/3.0.0-beta.5/zappar-cv.js"></script>
+    <script type="text/javascript" src="https://libs.zappar.com/zappar-cv/2.1.9/zappar-cv.js"></script>
     <script>
         var db = indexedDB.open("dummy_indexdb", 1); // iOS 14.6 fix; the call to open indexdb hangs forever otherwise
 
         const buildUrl = "Build";
-        const loaderUrl = buildUrl + "/cee3bfd5589651a8b16e2a12b8abe5b3.loader.js";
+        const loaderUrl = buildUrl + "/WebAR-Test.loader.js";
         const config = {
-            dataUrl: buildUrl + "/e93a888091df8c16a44d3dbe4e256689.data.unityweb",
-            frameworkUrl: buildUrl + "/21bc8a87ec7e8a4ef207f589429d305f.framework.js.unityweb",
-            codeUrl: buildUrl + "/9cbe219165f3f0b71c339d6fe6f02a6e.wasm.unityweb",
+            dataUrl: buildUrl + "/WebAR-Test.data.unityweb",
+            frameworkUrl: buildUrl + "/WebAR-Test.framework.js.unityweb",
+            codeUrl: buildUrl + "/WebAR-Test.wasm.unityweb",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "DefaultCompany",
             productName: "Zappar-Test",
-            productVersion: "0.1.0",
+            productVersion: "0.1",
         //Useful when used along with Filename as Hashes option
             cacheControl: function (url) {
             // typically includes: .data, .bundle, .zpt
             if (url.match(/\.data/) || url.match(/\.bundle/) || url.match(/\.zpt/)) {
-             return "immutable";
-}
+             return "must-revalidate";
+            }
    
             if (url.match(/\.mp4/) || url.match(/\.custom/) || url.match(/\.zbin/)) {
                 return "immutable";
