@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="favicon.ico">
-    <title>Zappar-Test</title>
+    <title>Zappar</title>
     <style>
         html {
             box-sizing: border-box;
@@ -137,21 +137,21 @@
         var db = indexedDB.open("dummy_indexdb", 1); // iOS 14.6 fix; the call to open indexdb hangs forever otherwise
 
         const buildUrl = "Build";
-        const loaderUrl = buildUrl + "/cee3bfd5589651a8b16e2a12b8abe5b3.loader.js";
+        const loaderUrl = buildUrl + "/WebAR-Test.loader.js";
         const config = {
-            dataUrl: buildUrl + "/132a17c696945e5946a27da8dfd26108.data.unityweb",
-            frameworkUrl: buildUrl + "/45b41e390447eb75cf31e74677af53f5.framework.js.unityweb",
-            codeUrl: buildUrl + "/84539b9ee343cac717a4c8d6da61afc7.wasm.unityweb",
+            dataUrl: buildUrl + "/WebAR-Test.data.unityweb",
+            frameworkUrl: buildUrl + "/WebAR-Test.framework.js.unityweb",
+            codeUrl: buildUrl + "/WebAR-Test.wasm.unityweb",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "DefaultCompany",
-            productName: "Zappar-Test",
+            productName: "Zappar",
             productVersion: "0.1",
         //Useful when used along with Filename as Hashes option
             cacheControl: function (url) {
             // typically includes: .data, .bundle, .zpt
             if (url.match(/\.data/) || url.match(/\.bundle/) || url.match(/\.zpt/)) {
-             return "immutable";
-}
+             return "must-revalidate";
+            }
    
             if (url.match(/\.mp4/) || url.match(/\.custom/) || url.match(/\.zbin/)) {
                 return "immutable";
