@@ -137,11 +137,11 @@
         var db = indexedDB.open("dummy_indexdb", 1); // iOS 14.6 fix; the call to open indexdb hangs forever otherwise
 
         const buildUrl = "Build";
-        const loaderUrl = buildUrl + "/WebAR-Test.loader.js";
+        const loaderUrl = buildUrl + "/cee3bfd5589651a8b16e2a12b8abe5b3.loader.js";
         const config = {
-            dataUrl: buildUrl + "/WebAR-Test.data.unityweb",
-            frameworkUrl: buildUrl + "/WebAR-Test.framework.js.unityweb",
-            codeUrl: buildUrl + "/WebAR-Test.wasm.unityweb",
+            dataUrl: buildUrl + "/71aeb4e03c77e150e6664c45d3305319.data.unityweb",
+            frameworkUrl: buildUrl + "/45b41e390447eb75cf31e74677af53f5.framework.js.unityweb",
+            codeUrl: buildUrl + "/84539b9ee343cac717a4c8d6da61afc7.wasm.unityweb",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "DefaultCompany",
             productName: "Zappar-Test",
@@ -150,8 +150,8 @@
             cacheControl: function (url) {
             // typically includes: .data, .bundle, .zpt
             if (url.match(/\.data/) || url.match(/\.bundle/) || url.match(/\.zpt/)) {
-             return "must-revalidate";
-            }
+             return "immutable";
+}
    
             if (url.match(/\.mp4/) || url.match(/\.custom/) || url.match(/\.zbin/)) {
                 return "immutable";
