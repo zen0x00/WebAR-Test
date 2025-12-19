@@ -137,11 +137,11 @@
         var db = indexedDB.open("dummy_indexdb", 1); // iOS 14.6 fix; the call to open indexdb hangs forever otherwise
 
         const buildUrl = "Build";
-        const loaderUrl = buildUrl + "/cee3bfd5589651a8b16e2a12b8abe5b3.loader.js";
+        const loaderUrl = buildUrl + "/WebAR-Test.loader.js";
         const config = {
-            dataUrl: buildUrl + "/48df828b74ecf84b2d877f0dc91d4ff7.data.unityweb",
-            frameworkUrl: buildUrl + "/a97b368c8d01d196ada2010bf7d6c95e.framework.js.unityweb",
-            codeUrl: buildUrl + "/80215c27eaa41bf18b53824dc7dfb23d.wasm.unityweb",
+            dataUrl: buildUrl + "/WebAR-Test.data.unityweb",
+            frameworkUrl: buildUrl + "/WebAR-Test.framework.js.unityweb",
+            codeUrl: buildUrl + "/WebAR-Test.wasm.unityweb",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "DefaultCompany",
             productName: "Anil Foods",
@@ -150,8 +150,8 @@
             cacheControl: function (url) {
             // typically includes: .data, .bundle, .zpt
             if (url.match(/\.data/) || url.match(/\.bundle/) || url.match(/\.zpt/)) {
-             return "immutable";
-}
+             return "must-revalidate";
+            }
    
             if (url.match(/\.mp4/) || url.match(/\.custom/) || url.match(/\.zbin/)) {
                 return "immutable";
